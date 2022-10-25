@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: #0c0800;
+    --second-color: #0044e3;
+}
+
+body {
+    min-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(6, 17, 55, 0.767) rgb(22, 48, 177);
+}
+
+.back {
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 10px 30px;
+    color: white;
+    background: var(--main-color);
+    border-radius: 0px 0px 10px 0px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    transition: 0.4s;
+}
+
+.back:hover {
+    color: #dd9700;
+}
+
+.section {
+    background: var(--main-color);
+    width: 100%;
+    overflow: hidden;
+}
+
+.section .sec-cover {
+    background: url(../pics/page-header-bg.svg);
+    padding: 30px 0px;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 0px 100%;
+}
+
+.section .row {
+    display: flex;
+    justify-content: center;
+}
+
+.section .row .logo {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.section .sec-cover .sec-col {
+    background: rgb(243, 243, 243);
+    padding: 30px 50px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.section .row .sec-col h1 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #000155;
+}
+
+.section .row .sec-col p {
+    font-size: 16px;
+    opacity: 0.7;
+    color: rgb(104, 104, 104);
+}
+
+.section .row .sec-col .google {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+    margin-bottom: 50px;
+}
+
+.section .row .sec-col .google .sec-google img {
+    margin-right: 10px;
+}
+
+.section .row .sec-col .google .sec-google {
+    background: #000155;
+    padding: 15px;
+    text-decoration: none;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.4s;
+    box-shadow: 0 0.125rem 0.3rem -0.0625rem rgba(12, 8, 0, 0.11), 0 0.275rem 0.75rem -0.0625rem rgba(12, 8, 0, 0.151) !important;
+}
+
+.section .row .sec-col .google .sec-google:hover {
+    background: #dd9700;
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+    box-shadow: none;
+}
+
+.section .row .line {
+    position: relative;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid grey;
+}
+
+.section .row .line .or {
+    position: absolute;
+    top: -30px;
+    background: rgb(243, 243, 243);
+    padding: 15px;
+    font-weight: 600;
+}
+
+.section .row .sec-col label {
+    font-size: 14px;
+    color: #000155;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.section .row .sec-col label .astric {
+    color: red;
+    font-size: 16px;
+}
+
+.section .row .sec-col input {
+    width: 100%;
+    padding: 10px 0px 10px 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(223, 223, 223);
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.section .row .sec-col button {
+    width: 100%;
+    color: white;
+    background: var(--second-color);
+    padding: 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: fantasy;
+    border-radius: 10px;
+    border: none;
+    margin: 30px 0px;
+    transition: 0.4s;
+}
+
+.section .row .sec-col button:hover {
+    background: #000277;
+}
+
+.section .row .sec-col .forget {
+    text-align: center;
+}
+
+.section .row .sec-col .sec-a {
+    text-decoration: none;
+    color: #5972fc;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: arial;
+    transition: 0.4s;
+}
+
+.section .row .sec-col .sec-a:hover {
+    color: #0026ff;
+}
+
+@media (max-width: 575px) {
+    .section .row .sec-col h1 {
+        font-size: 22px;
+    }
+    .section .row .sec-col p {
+        font-size: 14px;
+        opacity: 0.7;
+        color: rgb(104, 104, 104);
+    }
+    .section .row .sec-col .google .sec-google {
+        font-size: 13px;
+    }
+}
