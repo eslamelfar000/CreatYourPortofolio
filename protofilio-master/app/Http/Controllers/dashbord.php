@@ -25,4 +25,21 @@ class dashbord extends Controller
         return view('dashboard.home');
     }
 
+    public function resume()
+    {
+        return view('dashboard.resume');
+    }
+    public function services()
+    {
+        return view('dashboard.services');
+    }
+    public function proto()
+    {
+        return view('dashboard.proto');
+    }
+    public function contant()
+    {
+        return view('dashboard.contant');
+    }
+
 }

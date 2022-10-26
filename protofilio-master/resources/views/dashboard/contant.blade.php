@@ -43,4 +43,3 @@
         <!-- Main Footer -->
 
 @endsection('content')
-

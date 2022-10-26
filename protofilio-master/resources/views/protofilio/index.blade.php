@@ -245,7 +245,7 @@
         </div><!-- End Skills -->
 
         <!-- ======= Interests ======= -->
-        <div class="interests container">
+        {{-- <div class="interests container">
 
             <div class="section-title">
                 <h2>Interests</h2>
@@ -326,10 +326,10 @@
                 </div>
             </div>
 
-        </div><!-- End Interests -->
+        </div><!-- End Interests --> --}}
 
         <!-- ======= Testimonials ======= -->
-        <div class="testimonials container">
+        {{--<div class="testimonials container">
 
             <div class="section-title">
                 <h2>Testimonials</h2>
@@ -425,7 +425,7 @@
 
             </div>
 
-        </div><!-- End Testimonials  -->
+        </div><!-- End Testimonials  --> --}}
 
     </section><!-- End About Section -->
 
