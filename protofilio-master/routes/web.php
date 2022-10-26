@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\Home;
+use App\Http\Controllers\dashbord;
+use App\Http\Controllers\Protofilio;
+use App\Http\Controllers\user;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,38 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('adminlte');
-// });
+Route::get('login',[user::class,'login'])->name('login');
+Route::get('register',[user::class,'register'])->name('register');
+Route::post('loginRequest',[user::class,'loginRequest']);
+Route::post('storeRegister',[user::class,'storeRegister']);
 
-Route::get('/', function () {
-    return view('index');
+
+Route::group(["middleware"=> "auth"], function(){
+    Route::get('logout',[user::class,'logout']);
 });
 
-Route::get("/home",[Home::class ,"home" ]);
+Route::get('admin',[dashbord::class,'admin']);
+Route::get('home',[dashbord::class,'home']);
+Route::get('about',[dashbord::class,'about']);
 
+Route::get('protofilio',[Protofilio::class,'index']);
 
-
-
-Route::get('/login', function () {
-        return view('login');
-    });
-
-Route::get('/register', function () {
-        return view('register');
-    });
-Route::get('/about', function () {
-        return view('about');
-    });
-Route::get('/resume', function () {
-        return view('resume');
-    });
-Route::get('/services', function () {
-        return view('services');
-    });
-Route::get('/portfolio', function () {
-        return view('portfolio');
-    });
-Route::get('/contact', function () {
-        return view('contact');
-    });

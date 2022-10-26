@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/fontawesome-free-6.1.2-web/css/all.css">
     <link rel="stylesheet" href="{{asset("/assets/css/login.css")}}">
-    <link rel="icon" href="assets/pics/favicon.png">
+    <link rel="icon" href="pics/favicon.png">
     <title>Quiety - Sign In | Software & IT Solutions</title>
 </head>
 
@@ -18,19 +18,12 @@
         <div class="sec-cover">
             <div class="container">
                 <div class="row">
-                    <!-- <div class="logo">
-                        <img src="assets/pics/logo-2.png" alt="">
-                    </div> -->
-                </div>
-                <div class="row">
                     <div class="col-11 col-md-9 col-lg-6 col-xl-5">
                         <div class="sec-col">
-                            <h1>Nice to Seeing You Again</h1>
-                            <p>Please log in to access your account web-enabled methods of innovative niches.</p>
-
+                            <h1>register</h1>
                             <div class="google">
                                 <a href="#" class="btn sec-google">
-                                    <img src="assets\pics\google-icon.svg" alt="">
+                                    <img src="assets/pics/google-icon.svg" alt="">
                                     <span class="google-span">Connect with Google</span>
                                 </a>
                             </div>
@@ -40,22 +33,28 @@
                             </div>
 
 
-                            <form action="">
+                            <form action="{{url('storeRegister')}}" method="post">
+                                @csrf
+                                <label for="">Full Name <span class="astric">*</span></label><br>
+                                <input type="text" placeholder="Enter Your Full Name" name="name">
+
+                                <br>
+
                                 <label for="">Email <span class="astric">*</span></label><br>
-                                <input type="text" placeholder="Email">
+                                <input type="email" placeholder="Enter Your emial" name="email">
 
                                 <br>
 
                                 <label for="">Password <span class="astric">*</span></label><br>
-                                <input type="password" placeholder="Password">
+                                <input type="password" placeholder="Password" name="password">
+
+
+                                <input type="submit">
                             </form>
-
-                            <button type="submit">Submit</button>
-
                             <br>
 
                             <div class="forget">
-                                <a href="/register" class="sec-a">Don't have account..? Register</a>
+                            <a href="/login" class = "sec-a">Already have account..? </a>
                                 <br>
                                 <a href="" class="sec-a">Forgot password</a>
                             </div>

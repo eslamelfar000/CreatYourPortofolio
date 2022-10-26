@@ -1,5 +1,5 @@
-@extends('adminlte')
-@section('content')
+@extends('dashboard.adminlte')
+@section('content1')
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
