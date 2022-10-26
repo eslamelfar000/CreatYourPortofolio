@@ -22,8 +22,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get("/fristpage",[Home::class ,"fristpage" ]);
-Route::get("/secondpage",[Home::class ,"secondpage" ]);
+Route::get("/home",[Home::class ,"home" ]);
+
+
 
 
 Route::get('/login', function () {
@@ -32,4 +33,19 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
         return view('register');
+    });
+Route::get('/about', function () {
+        return view('about');
+    });
+Route::get('/resume', function () {
+        return view('resume');
+    });
+Route::get('/services', function () {
+        return view('services');
+    });
+Route::get('/portfolio', function () {
+        return view('portfolio');
+    });
+Route::get('/contact', function () {
+        return view('contact');
     });

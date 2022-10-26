@@ -41,6 +41,7 @@
 
     <!-- ======= Header ======= -->
     <header id="header">
+        <a href="/home" class = "creat">Creat Your Portofolio</a>
         <div class="container">
 
             <h1>Emily Jones</h1>
@@ -832,13 +833,13 @@
         </div>
     </section><!-- End Contact Section -->
 
-    <div class="credits">
+    <!-- <div class="credits"> -->
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
 
-    </div>
+    <!-- </div> -->
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
