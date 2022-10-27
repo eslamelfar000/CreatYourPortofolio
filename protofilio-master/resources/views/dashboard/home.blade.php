@@ -1,6 +1,7 @@
 @extends('dashboard.adminlte')
 @section('content')
             <!-- Content Header (Page header) -->
+            <link rel="stylesheet" href="{{asset("/assets/css/home.css")}}">
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">

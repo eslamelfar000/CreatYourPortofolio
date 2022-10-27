@@ -12,15 +12,16 @@
     <link rel="stylesheet" href="{{asset("/assets/plugins/fontawesome-free/css/all.min.css")}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset("/assets/dist/css/adminlte.min.css")}}">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-dark" style = "display:flex;justify-content:right;padding:15px 15px 15px 0px;text-align:right">
 
+<<<<<<< Updated upstream:protofilio-master/resources/views/dashboard/adminlte.blade.php
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -44,18 +45,27 @@
                                 </div>
                             </div>
                         </form>
+=======
+            <div class="user-panel d-flex">
+                <div class="info" style="padding-right:0px">
+                    <a href="#" class="d-block ancor" style="text-decoration:none;color:white;font-weight:600">Alexander Pierce</a>
+                </div>
+                    <div class="image">
+                        <img src="{{asset("assets/dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
+>>>>>>> Stashed changes:protofilio-master/resources/views/adminlte.blade.php
                     </div>
-                </li>
-
-                <!-- Messages Dropdown Menu -->
-            </ul>
+                </div>
         </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="box-shadow:0 0px 0px rgba(0,0,0,.25),0 0px 0px rgba(0,0,0,.22) !important">
             <!-- Brand Logo -->
+<<<<<<< Updated upstream:protofilio-master/resources/views/dashboard/adminlte.blade.php
             <a href="" class="brand-link">
+=======
+            <a href="/" class="brand-link" style="padding:17px 10px">
+>>>>>>> Stashed changes:protofilio-master/resources/views/adminlte.blade.php
                 <img src="{{asset("assets/dist/img/AdminLTELogo.png")}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -64,26 +74,26 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="{{asset("assets/dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Create Protofilio</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- SidebarSearch Form -->
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-3">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                <li class="nav-item mb-2">
                                     <a href="{{url('home')}}" class="nav-link
                                     @if (app('request')->route()->uri()=="home")
                                     active
