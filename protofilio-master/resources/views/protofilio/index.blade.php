@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Personal Bootstrap Template</title>
+    <title>Create You Portofolio</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -41,7 +41,7 @@
 
     <!-- ======= Header ======= -->
     <header id="header">
-        <a href="/home" class = "creat">Creat Your Portofolio</a>
+        <a href="/home" class = "creat" target="_blank">Creat Your Portofolio</a>
         <div class="container">
 
             <h1>Emily Jones</h1>

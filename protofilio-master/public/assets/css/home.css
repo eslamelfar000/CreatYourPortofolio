@@ -1,0 +1,35 @@
+.content h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.content form {
+    width: 100%;
+}
+
+.content input {
+    width: 100%;
+    border: 1px solid rgb(217, 217, 217);
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.content .inputs {
+    margin-bottom: 20px;
+}
+
+.content .links input {
+    margin-bottom: 20px;
+}
+
+.content .links .icon {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.content .links .icon i {
+    font-size: 22px;
+    margin-right: 10px;
+}

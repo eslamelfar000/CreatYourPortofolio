@@ -18,7 +18,9 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-
+                            <div class="col">
+                                wleocm
+                            </div>
                         </div>
                         <!-- /.col-md-6 -->
                         <!-- /.col-md-6 -->

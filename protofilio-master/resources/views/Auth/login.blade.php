@@ -23,9 +23,9 @@
                     </div> -->
                 </div>
                 <div class="row">
-                    <div class="col-11 col-md-9 col-lg-6 col-xl-5">
+                    <div class="col-11 col-md-9 col-lg-6 col-xl-5 makeCenter">
                         <div class="sec-col">
-                            <h1>login</h1>
+                            <h1>Login</h1>
 
                             <div class="google">
                                 <a href="#" class="btn sec-google">
@@ -44,7 +44,7 @@
                                 <br>
                                 <label for="">Password <span class="astric">*</span></label><br>
                                 <input type="password" placeholder="Password" name="password">
-                                <input type="submit">
+                                <input type="submit" value="Login">
                             </form>
                             <br>
 
