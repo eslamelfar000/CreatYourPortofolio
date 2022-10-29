@@ -9,43 +9,50 @@
     <div class="container-fluid">
         <h2>Edit Home Page</h2>
         <div class="row">
-            <form action="">
+            <form action="{{url('requesthome')}}" method="post">
+                @csrf
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div>{{$error}}</div>
+                    @endforeach
+                @endif
                 <div class="inputs">
                     <label for="">Name</label>
-                    <input class="" type="text" value="" name="" placeholder="Enter Name">
+                    <input class="" type="text"  name="name" placeholder="{{$data}}">
                 </div>
                 <div class="inputs">
                     <label for="">Title</label>
-                    <input type="text" value="" name="" placeholder="Enter Name">
+                    <input type="text" value="" name="descrption" placeholder="Enter short descrption">
                 </div>
-                <br><br>
+                <br>
                 <div class="links">
                     <div class="one-link">
                         <div class="icon"> <i class="fa-brands fa-facebook"></i>
                             <span>Facebook</span>
                         </div>
-                        <input type="text" value="" placeholder="Enter Facebook Link">
+                        <input type="text"  placeholder="Enter Facebook Link" name="Facebook">
                     </div>
                     <div class="one-link">
                         <div class="icon"> <i class="fa-brands fa-instagram"></i>
                             <span>Instagram</span>
                         </div>
-                        <input type="text" value="" placeholder="Enter Instagram Link">
+                        <input type="text"  name="Instagram" placeholder="Enter Instagram Link">
                     </div>
                     <div class="one-link">
                         <div class="icon">
                             <i class="fa-brands fa-twitter"></i>
                             <span>Twitter</span>
                         </div>
-                        <input type="text" value="" placeholder="Enter Twitter Link">
+                        <input type="text"  name="Twitter" placeholder="Enter Twitter Link">
                     </div>
                     <div class="one-link">
                         <div class="icon">
                             <i class="fa-brands fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </div>
-                        <input type="text" value="" placeholder="Enter LinkedIn Link">
+                        <input type="text" name="LinkedIn" placeholder="Enter LinkedIn Link">
                     </div>
+                    <input type="submit" value="save" >
                 </div>
             </form>
         </div>

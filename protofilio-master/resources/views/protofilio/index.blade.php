@@ -44,7 +44,7 @@
         <a href="/home" class = "creat" target="_blank">Creat Your Portofolio</a>
         <div class="container">
 
-            <h1>Emily Jones</h1>
+            <h1>{{$data}}</h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
             <h2>I'm a passionate <span>graphic designer</span> from New York</h2>
@@ -88,11 +88,7 @@
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                     <h3>UI/UX &amp; Graphic Designer</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
-                    </p>
+
                     <div class="row">
                         <div class="col-lg-6">
                             <ul>

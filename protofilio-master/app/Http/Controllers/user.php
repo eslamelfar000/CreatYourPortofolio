@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User as UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -43,17 +44,24 @@ class user extends Controller
     {
         $request->validate(
             [
-                'name' => 'required|min:3 |max:12',
+                'name' => 'required|min:3 |max:20',
                 'email' =>'required|email|unique:users,email',
                 'password' =>'required|min:6'
             ]);
-        DB::table('users')->insert(
-            [
-            "name" => $request->name,
-            "email" => $request->email,
-            "password" => bcrypt($request->password)
-            ]
-        );
+        $model = new UserModel();
+        $model->name = $request->name;
+        $model->email = $request->email;
+        $model->password = bcrypt($request->password);
+        $model->save();
         return redirect('login');
+
+        // DB::table('users')->insert(
+        //     [
+        //     "name" => $request->name,
+        //     "email" => $request->email,
+        //     "password" => bcrypt($request->password)
+        //     ]
+        // );
+        // return redirect('login');
     }
 }

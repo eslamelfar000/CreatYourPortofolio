@@ -1,28 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class dashbord extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function admin()
     {
         return view('dashboard.adminlte');
     }
-
     public function about()
     {
         return view('dashboard.about');
     }
-
     public function home()
     {
-        return view('dashboard.home');
+        $id = Auth::id();
+        $data = User::find($id)->name;
+        return view('dashboard.home',compact('data'));
     }
 
     public function resume()
@@ -41,5 +44,4 @@ class dashbord extends Controller
     {
         return view('dashboard.contant');
     }
-
 }

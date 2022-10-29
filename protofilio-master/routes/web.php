@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashbord;
+use App\Http\Controllers\home\homeController;
 use App\Http\Controllers\Protofilio;
 use App\Http\Controllers\user;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +33,9 @@ Route::get('services',[dashbord::class,'services']);
 Route::get('proto',[dashbord::class,'proto']);
 Route::get('contant',[dashbord::class,'contant']);
 Route::get('protofilio',[Protofilio::class,'index']);
+
+
+Route::post('requesthome',[homeController::class,'homeRequest']);
+Route::get('responsehome',[homeController::class,'responseHome']);
+
 
