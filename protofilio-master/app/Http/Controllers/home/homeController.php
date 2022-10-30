@@ -29,29 +29,54 @@ class homeController extends Controller
 // -----------------------------------------------
             $name = $request->name;
             $title = $request->descrption;
+
             $facebook = $request->Facebook;
             $Instagram = $request->Instagram;
             $Twitter = $request->Twitter;
             $linkedin = $request->LinkedIn;
 
 // -----------------------------------------------
+
             $descrption = new descrptions();
             $descrption->name = $name;
             $descrption->description = $title;
+            $descrption->user_id = Auth::id();
             $descrption->save();
+
             $url = new media;
             $url->Facebook = $facebook;
             $url->Instagram = $Instagram;
             $url->Twitter = $Twitter;
             $url->LinkedIn = $linkedin;
+            $url->user_id = Auth::id();
             $url->save();
             return redirect('about');
+
     }
 
+    public function editHome()
+    {
+        $id = Auth::id();
+        $user = User::find($id);
+        $personalInfo = $user->descrptions;
+        $medias = $user->media;
+        return view('dashboard.Home.updatehome', compact(['personalInfo','medias']));
+    }
+    public function updateHome(Request $request)
+    {
+        
+    }
+
+    public function deleteHome()
+    {
+
+    }
     public function responseHome()
     {
         $id = Auth::id();
-        $data = User::find($id)->name;
-        return view('protofilio.index',compact('data'));
+        $datauser = user::find($id);
+        $media = $datauser->media;
+        $personalInfo = $datauser->descrptions;
+        return view('acutalproto.actualptofilio',compact(['media','personalInfo']));
     }
 }

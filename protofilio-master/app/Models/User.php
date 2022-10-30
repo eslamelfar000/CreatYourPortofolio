@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function media()
+    {
+        return $this->hasOne(media::class,'user_id','id');
+    }
+    public function descrptions()
+    {
+        return $this->hasOne(descrptions::class,'user_id','id');
+    }
 }

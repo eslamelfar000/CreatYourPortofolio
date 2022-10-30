@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('descrption',function(Blueprint $table){
-            $table->increments('id');
+        Schema::table('medias',function(Blueprint $table)
+        {
+            $table->foreignId('user_id')->nullable()->unsigned()->constrained('users','id');
             
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->timestamps();
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('descrption');
+        //
     }
 };

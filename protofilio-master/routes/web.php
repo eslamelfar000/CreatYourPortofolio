@@ -17,25 +17,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/',[Protofilio::class,'index']);
 Route::get('login',[user::class,'login'])->name('login');
 Route::get('register',[user::class,'register'])->name('register');
 Route::post('loginRequest',[user::class,'loginRequest']);
 Route::post('storeRegister',[user::class,'storeRegister']);
-
+// ------------------------------------------------------------
 Route::group(["middleware"=> "auth"], function(){
     Route::get('logout',[user::class,'logout']);});
-
-Route::get('admin',[dashbord::class,'admin']);
+// ------------------------------------------------------------
+// views pages on dashbord
 Route::get('home',[dashbord::class,'home']);
 Route::get('about',[dashbord::class,'about']);
 Route::get('resume',[dashbord::class,'resume']);
 Route::get('services',[dashbord::class,'services']);
 Route::get('proto',[dashbord::class,'proto']);
 Route::get('contant',[dashbord::class,'contant']);
-Route::get('protofilio',[Protofilio::class,'index']);
-
-
+// --------------------------------------------------------------
 Route::post('requesthome',[homeController::class,'homeRequest']);
-Route::get('responsehome',[homeController::class,'responseHome']);
+Route::get('viewProfile',[homeController::class,'responseHome']);
+// --------------------------------------------------------------
+Route::group(["prefix"=>'home/'],function()
+{
+    Route::get('edit',[homeController::class,'editHome']);
+    Route::post('update',[homeController::class,'updateHome']);
+    // Route::get('delete',[homeController::class,'deleteHome']);
+});
 
 

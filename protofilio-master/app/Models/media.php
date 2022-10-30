@@ -29,4 +29,10 @@ class media extends Model
         'twitter' => 'string',
         'linkedin' => 'string',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
+
 }

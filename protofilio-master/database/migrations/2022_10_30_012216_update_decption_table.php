@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('descrption',function(Blueprint $table){
-            $table->increments('id');
-            
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->timestamps();
+        Schema::table('descrption',function (Blueprint $table){
+            $table->foreignId('user_id')->nullable()->unsigned()->constrained('users','id');
         });
     }
 
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('descrption');
+        //
     }
 };
