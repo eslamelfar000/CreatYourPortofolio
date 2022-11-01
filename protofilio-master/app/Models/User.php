@@ -50,4 +50,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(descrptions::class,'user_id','id');
     }
+
+    public function about()
+    {
+        return $this->hasOne(about::class,'user_id','id');
+    }
+
+    public function aboutskill()
+    {
+        return $this->hasOne(aboutskill::class,'user_id','id');
+    }
 }

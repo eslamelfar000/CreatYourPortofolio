@@ -14,10 +14,6 @@ class dashbord extends Controller
         $this->middleware('auth');
     }
 
-    public function about()
-    {
-        return view('dashboard.About.about');
-    }
     public function home()
     {
         $id = Auth::id();
@@ -25,11 +21,27 @@ class dashbord extends Controller
         return view('dashboard.Home.home',compact('data'));
     }
 
-    public function updatehome()
+    public function editHome()
     {
-        return view('dashboard.Home.updatehome');
+        $id = Auth::id();
+        $user = User::find($id);
+        $personalInfo = $user->descrptions;
+        $medias = $user->media;
+        return view('dashboard.Home.updatehome', compact(['personalInfo','medias']));
     }
-
+// ======================================================================
+    public function about()
+    {
+        return view('dashboard.About.about');
+    }
+    public function editAbout()
+    {
+        // $id = Auth::id();
+        // $user = User::find($id);
+        // $personalInfo = $user->descrptions;
+        // $medias = $user->media;
+        return view('dashboard.About.updateabout');
+    }
     public function resume()
     {
         return view('dashboard.Resume.resume');

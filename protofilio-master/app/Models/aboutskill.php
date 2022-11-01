@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class media extends Model
+class aboutskill extends Model
 {
-    protected $table = 'medias';
     use HasFactory;
-    protected $fillable = [
-        'Facebook',
-        'instagram',
-        'Twitter',
-        'LinkedIn',
-    ];
+    protected $table = 'aboutskills';
 
+    protected $fillable = [
+        'html',
+        'css',
+        'js',
+        'photoshop',
+        'php',
+        'bootstrap'
+    ];
 
     protected $hidden = [
         'updated_at',
@@ -23,16 +25,15 @@ class media extends Model
     ];
 
     protected $casts = [
-        'id' => 'integer',
-        'facebook' => 'string',
-        'instagram' => 'string',
-        'twitter' => 'string',
-        'linkedin' => 'string',
+        'html' =>'integer',
+        'css'=>'integer',
+        'js'=>'integer',
+        'photoshop' =>'integer',
+        'php' =>'integer',
+        'bootstrap' => 'integer',
     ];
-
     public function user()
     {
         return $this->belongsTo(User::class,'user_id','id');
     }
-    
 }

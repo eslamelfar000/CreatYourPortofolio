@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\actualproto\actualprotoController;
 use App\Http\Controllers\dashbord;
-use App\Http\Controllers\home\homeController;
 use App\Http\Controllers\Protofilio;
+use App\Http\Controllers\home\homeController;
+use App\Http\Controllers\about\aboutController;
 use App\Http\Controllers\user;
 use Illuminate\Support\Facades\Route;
 
@@ -34,14 +36,31 @@ Route::get('services',[dashbord::class,'services']);
 Route::get('proto',[dashbord::class,'proto']);
 Route::get('contant',[dashbord::class,'contant']);
 // --------------------------------------------------------------
-Route::post('requesthome',[homeController::class,'homeRequest']);
-Route::get('viewProfile',[homeController::class,'responseHome']);
+
 // --------------------------------------------------------------
+Route::post('requesthome',[homeController::class,'homeRequest']);
+// --------------------------------------------------------------
+Route::get('viewProfile',[actualprotoController::class,'responseHome'])->middleware('data');
 Route::group(["prefix"=>'home/'],function()
 {
-    Route::get('edit',[homeController::class,'editHome']);
-    Route::post('update',[homeController::class,'updateHome']);
+    Route::group(['middleware'=>"data"],function(){
+        Route::get('edit',[dashbord::class,'editHome']);
+        Route::post('update',[homeController::class,'updateHome']);
+    });
     // Route::get('delete',[homeController::class,'deleteHome']);
 });
 
+
+Route::post('requestabout',[aboutController::class,'aboutRequest']);
+
+Route::group(["prefix"=>'about/'],function()
+{
+    Route::group(['middleware'=>"data"],function(){
+        Route::get('edit',[dashbord::class,'editAbout']);
+        Route::post('update',[homeController::class,'']);
+    });
+    // Route::get('delete',[homeController::class,'deleteHome']);
+});
+
+// Route::get('data',[homeController::class,'data']);
 

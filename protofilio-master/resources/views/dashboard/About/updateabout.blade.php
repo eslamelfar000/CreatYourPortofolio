@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <form action="{{ url('requestabout') }}" method="post">
+                    <form action="{{ url('') }}" method="post">
                         @csrf
                         @if ($errors->any())
                             @foreach ($errors->all() as $error)
@@ -40,7 +40,7 @@
                                 <div >
                                     <span>Website</span>
                                 </div>
-                                <input type="text" placeholder="Enter your Website" name="website">
+                                <input type="text" placeholder="Enter your Website" name="Website">
                             </div>
                             <div class="one-link">
                                 <div >

@@ -14,7 +14,9 @@ class homeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
     }
+    // =========> ask Eng/Mohammad Amr <=========
     public function homeRequest(Request $request)
     {
         $request->validate(
@@ -53,30 +55,45 @@ class homeController extends Controller
             return redirect('about');
 
     }
-
-    public function editHome()
-    {
-        $id = Auth::id();
-        $user = User::find($id);
-        $personalInfo = $user->descrptions;
-        $medias = $user->media;
-        return view('dashboard.Home.updatehome', compact(['personalInfo','medias']));
-    }
+    
     public function updateHome(Request $request)
     {
-        
+        $request->validate(
+            [
+                "name"=>"min:4|max:30|required",
+                "descrption" => "required|min:10 |max:50",
+                "facebook" =>"url",
+                "Instagram" =>"url",
+                "Twitter" =>"url",
+                "LinkedIn" =>"url"
+            ]);
+            $id = Auth::id();
+            $user = User::find($id);
+            $user->media->update([
+                'Facebook' => $request->Facebook,
+                'Instagram' => $request->Instagram,
+                'Twitter' => $request->Twitter,
+                'LinkedIn' => $request->LinkedIn
+            ]);
+            $user->descrptions->update([
+                'name' => $request->name,
+                'description' => $request->descrption
+            ]);
+            return redirect('viewProfile');
     }
 
     public function deleteHome()
     {
 
     }
-    public function responseHome()
+    public function data()
     {
         $id = Auth::id();
-        $datauser = user::find($id);
-        $media = $datauser->media;
-        $personalInfo = $datauser->descrptions;
-        return view('acutalproto.actualptofilio',compact(['media','personalInfo']));
+        $user = User::find($id);
+        if(($user->media == null) AND ($user->descrptions == null))
+        {
+            return false;
+        }
+            return true;
     }
 }

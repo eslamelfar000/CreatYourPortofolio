@@ -2,7 +2,7 @@
 @section('content')
 <!-- Content Header (Page header) -->
 <link rel="stylesheet" href="{{asset("/assets/css/home.css")}}">
-<link rel="stylesheet" href="assets/fontawesome-free-6.1.2-web/css/all.css">
+<link rel="stylesheet" href="{{asset("assets/fontawesome-free-6.1.2-web/css/all.css")}}">
 
 <!-- Main content -->
 <div class="content pt-4 px-5">
@@ -13,11 +13,11 @@
                 @csrf
                 <div class="inputs">
                     <label for="">Name</label>
-                    <input class="" type="text"  name="name" placeholder="{{$personalInfo->name}}">
+                    <input class="" type="text"  name="name" placeholder="{{$personalInfo->name}}" value="{{$personalInfo->name}}">
                 </div>
                 <div class="inputs">
                     <label for="">Title</label>
-                    <input type="text" value="" name="descrption" placeholder="{{$personalInfo->description}}">
+                    <input type="text" value="{{$personalInfo->description}}" name="descrption" placeholder="{{$personalInfo->description}}">
                 </div>
                 <br>
                 <div class="links">
@@ -25,27 +25,27 @@
                         <div class="icon"> <i class="fa-brands fa-facebook"></i>
                             <span>Facebook</span>
                         </div>
-                        <input type="text"  placeholder="{{$medias->Facebook}}" name="Facebook">
+                        <input type="text"  placeholder="{{$medias->Facebook}}" value="{{$medias->Facebook}}" name="Facebook">
                     </div>
                     <div class="one-link">
                         <div class="icon"> <i class="fa-brands fa-instagram"></i>
                             <span>Instagram</span>
                         </div>
-                        <input type="text"  name="Instagram" placeholder="{{$medias->instagram}}">
+                        <input type="text"  name="Instagram" placeholder="{{$medias->instagram}}" value="{{$medias->instagram}}">
                     </div>
                     <div class="one-link">
                         <div class="icon">
                             <i class="fa-brands fa-twitter"></i>
                             <span>Twitter</span>
                         </div>
-                        <input type="text"  name="Twitter" placeholder="{{$medias->Twitter}}">
+                        <input type="text"  name="Twitter" placeholder="{{$medias->Twitter}}" value="{{$medias->Twitter}}">
                     </div>
                     <div class="one-link">
                         <div class="icon">
                             <i class="fa-brands fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </div>
-                        <input type="text" name="LinkedIn" placeholder="{{$medias->LinkedIn}}">
+                        <input type="text" name="LinkedIn" placeholder="{{$medias->LinkedIn}}" value="{{$medias->LinkedIn}}">
                     </div>
                     <input type="submit" value="save" >
                 </div>

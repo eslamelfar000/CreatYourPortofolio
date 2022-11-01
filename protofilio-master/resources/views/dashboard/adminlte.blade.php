@@ -83,8 +83,15 @@
                             <p>Pages<i class="right fas fa-angle-left"></i></p>
                         </a>
                         <ul class="nav nav-treeview">
-
+                            <li class="nav-item">
+                                <a href="{{url('viewProfile')}}"
+                                    class="nav-link
+                                    @if (app('request')->route()->uri() == 'viewProfile') active @endif ">
+                                    <p> View Profile</p>
+                                </a>
+                            </li>
                             <li class="nav-item mb-2">
+
                                 <a href=""
                                     class="nav-link
                                     @if (app('request')->route()->uri() == '') active @endif ">
@@ -92,25 +99,20 @@
                                     <p>manages Home Pages<i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
+                                    {{-- we need insert only one and after that just apdate --}}
+
                                     <li class="nav-item">
                                         <a href="{{ url('home') }}"
                                             class="nav-link
                                             @if (app('request')->route()->uri() == 'home') active @endif ">
-                                            <p>home Page</p>
+                                            <p>insert home Page</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ url('home/edit') }}"
                                             class="nav-link
                                             @if (app('request')->route()->uri() == 'home/edit') active @endif ">
-                                            <p>Update Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('viewProfile') }}"
-                                            class="nav-link
-                                            @if (app('request')->route()->uri() == 'viewProfile') active @endif ">
-                                            <p> View Profile Home Page</p>
+                                            <p>Edit Home Page</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -124,26 +126,20 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ url('') }}"
+                                        <a href="{{ url('about') }}"
                                             class="nav-link
-                                            @if (app('request')->route()->uri() == '') active @endif ">
+                                            @if (app('request')->route()->uri() == 'about') active @endif ">
                                             <p>About Page</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ url('') }}"
+                                        <a href="{{ url('about/edit') }}"
                                             class="nav-link
-                                            @if (app('request')->route()->uri() == '') active @endif ">
+                                            @if (app('request')->route()->uri() == 'about/edit') active @endif ">
                                             <p>Update About Page</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('viewProfile') }}"
-                                            class="nav-link
-                                            @if (app('request')->route()->uri() == 'viewProfile') active @endif ">
-                                            <p> View Profile About Page</p>
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
                             <li class="nav-item mb-2">
@@ -168,13 +164,7 @@
                                             <p>Update Rsumes Page</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('viewProfile') }}"
-                                            class="nav-link
-                                            @if (app('request')->route()->uri() == 'viewProfile') active @endif ">
-                                            <p> View Profile Rsumes Page</p>
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
                             <li class="nav-item mb-2">
@@ -199,13 +189,7 @@
                                             <p>Servies Page</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('viewProfile') }}"
-                                            class="nav-link
-                                            @if (app('request')->route()->uri() == 'viewProfile') active @endif ">
-                                            <p> View Profile Servies Page</p>
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
                             <li class="nav-item mb-2">
@@ -230,13 +214,7 @@
                                             <p>Protofilio Page</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('viewProfile') }}"
-                                            class="nav-link
-                                            @if (app('request')->route()->uri() == 'viewProfile') active @endif ">
-                                            <p> View Profile Home Page</p>
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
                             <li class="nav-item mb-2">
@@ -261,13 +239,7 @@
                                             <p>Contant Page</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('viewProfile') }}"
-                                            class="nav-link
-                                            @if (app('request')->route()->uri() == 'viewProfile') active @endif ">
-                                            <p> View Profile Contant Page</p>
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
                         </ul>

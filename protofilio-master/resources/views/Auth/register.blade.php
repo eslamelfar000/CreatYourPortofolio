@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/fontawesome-free-6.1.2-web/css/all.css">
     <link rel="stylesheet" href="{{asset("/assets/css/login.css")}}">
     <link rel="icon" href="pics/favicon.png">
-    <title>Quiety - Sign In | Software & IT Solutions</title>
+    <title>Register </title>
 </head>
 
 <body>
